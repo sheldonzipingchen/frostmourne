@@ -1,0 +1,8 @@
+log:
+  timestampFormat: 2006-01-02.15:04:05.000000
+  level: debug
+  # file:
+  #   path: /var/log/frostmourne/access.log
+
+smpp:
+  port: 2785

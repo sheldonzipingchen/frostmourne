@@ -2,4 +2,7 @@ module frostmourne
 
 go 1.15
 
-require github.com/go-redis/redis/v8 v8.6.0 // indirect
+require (
+	github.com/go-redis/redis/v8 v8.6.0 // indirect
+	github.com/spf13/viper v1.7.1 // indirect
+)
