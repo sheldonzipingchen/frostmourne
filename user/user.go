@@ -1,10 +1,12 @@
 package user
 
-import "encoding/json"
+import (
+	"fmt"
+)
 
 type User struct {
-	username string `json:"username"`
-	password string `json:"password"`
+	username string
+	password string
 }
 
 func (u *User) Username() string {
@@ -25,10 +27,6 @@ func (u *User) SetPassword(password string) *User {
 	return u
 }
 
-func (u *User) String() (string, error) {
-	out, err := json.Marshal(u)
-	if err != nil {
-		return "", err
-	}
-	return string(out), err
+func (u *User) String() string {
+	return fmt.Sprintf("username: %s, password: %s", u.Username(), u.Password())
 }

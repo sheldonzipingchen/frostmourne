@@ -22,8 +22,8 @@ func TestString(t *testing.T) {
 	u := &User{}
 	u.SetUsername("Sheldon Chen").
 		SetPassword("123456")
-	_, err := u.String()
-	if err != nil {
-		t.Errorf("user object marshal to a json failed: %v", err)
+	s := u.String()
+	if s == "" {
+		t.Errorf("user object marshal to a json failed")
 	}
 }
