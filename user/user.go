@@ -3,8 +3,26 @@ package user
 import "encoding/json"
 
 type User struct {
-	Username string `json:"username"`
-	Password string `json:"password"`
+	username string `json:"username"`
+	password string `json:"password"`
+}
+
+func (u *User) Username() string {
+	return u.username
+}
+
+func (u *User) SetUsername(username string) *User {
+	u.username = username
+	return u
+}
+
+func (u *User) Password() string {
+	return u.password
+}
+
+func (u *User) SetPassword(password string) *User {
+	u.password = password
+	return u
 }
 
 func (u *User) String() (string, error) {
