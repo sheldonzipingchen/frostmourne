@@ -5,4 +5,5 @@ log:
   #   path: /var/log/frostmourne/access.log
 
 smpp:
+  address: 127.0.0.1
   port: 2785
