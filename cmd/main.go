@@ -1,7 +1,20 @@
 package main
 
-import "fmt"
+import (
+	"flag"
+	"frostmourne/config"
+	"frostmourne/loglib"
+	"frostmourne/server"
+	"log"
+)
 
 func main() {
-	fmt.Println("Hello world")
+	environment := flag.String("e", "development", "")
+	flag.Usage = func() {
+		log.Fatal("Usage: server -e {mode}")
+	}
+	flag.Parse()
+	config.Init(*environment)
+	loglib.Init()
+	server.Init()
 }
