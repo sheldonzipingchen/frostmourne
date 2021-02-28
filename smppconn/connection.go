@@ -1,9 +1,9 @@
 package smppconn
 
 type SmppConnection struct {
-	addr     string `json:"addr"`
-	user     string `json:"user"`
-	password string `json:"password"`
+	addr     string
+	user     string
+	password string
 }
 
 func (c *SmppConnection) Addr() string {
