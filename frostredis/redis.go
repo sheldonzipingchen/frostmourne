@@ -2,6 +2,8 @@ package frostredis
 
 import (
 	"context"
+	"fmt"
+	"frostmourne/config"
 	"time"
 
 	"github.com/go-redis/redis/v8"
@@ -27,10 +29,23 @@ func (rc *redisClient) Get(key string) (string, error) {
 }
 
 func NewRedisClient() RedisClient {
+	config := config.GetConfig()
+
+	redisHost := config.GetString("redis.host")
+	if redisHost == "" {
+		redisHost = "127.0.0.1"
+	}
+	redisPort := config.GetString("redis.port")
+	if redisPort == "" {
+		redisPort = "6379"
+	}
+	redisAddr := fmt.Sprintf("%s:%s", redisHost, redisPort)
+	redisPassword := config.GetString("redis.password")
+	redisDB := config.GetInt("redis.db")
 	rdb := redis.NewClient(&redis.Options{
-		Addr:     "localhost:6379",
-		Password: "",
-		DB:       0,
+		Addr:     redisAddr,
+		Password: redisPassword,
+		DB:       redisDB,
 	})
 
 	rc := redisClient{
