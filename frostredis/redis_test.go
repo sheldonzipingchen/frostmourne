@@ -6,7 +6,7 @@ import (
 )
 
 func init() {
-	config.Init("development")
+	config.Init("test")
 }
 
 func TestNewRedisClient(t *testing.T) {
