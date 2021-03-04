@@ -25,8 +25,23 @@ func TestSet(t *testing.T) {
 	ctx := context.Background()
 
 	oneHour := 1 * time.Hour
-	_, err := redisClient.Set(ctx, "test-key", 1, oneHour)
+	result, err := redisClient.Set(ctx, "test-key", 1, oneHour)
 	if err != nil {
 		t.Errorf("Redis Client Set Method Error: %v", err)
+	} else {
+		t.Logf("Redis Client Set Method Result: %v", result)
+	}
+}
+
+func TestGet(t *testing.T) {
+	redisClient := NewRedisClient()
+
+	ctx := context.Background()
+
+	result, err := redisClient.Get(ctx, "test-key")
+	if err != nil {
+		t.Errorf("Redis Client Get Method Error: %v", err)
+	} else {
+		t.Logf("Redis Client Get Method Result: %v", result)
 	}
 }
