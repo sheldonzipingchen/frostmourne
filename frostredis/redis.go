@@ -10,20 +10,19 @@ import (
 )
 
 type RedisClient interface {
+	Set(ctx context.Context, key string, value interface{}, expiration time.Duration) (string, error)
 }
 
 type redisClient struct {
 	Rdb *redis.Client
 }
 
-func (rc *redisClient) Set(key string, value interface{}, expiration time.Duration) (string, error) {
-	ctx := context.Background()
+func (rc redisClient) Set(ctx context.Context, key string, value interface{}, expiration time.Duration) (string, error) {
 	result, err := rc.Rdb.Set(ctx, key, value, expiration).Result()
 	return result, err
 }
 
-func (rc *redisClient) Get(key string) (string, error) {
-	ctx := context.Background()
+func (rc redisClient) Get(ctx context.Context, key string) (string, error) {
 	val, err := rc.Rdb.Get(ctx, key).Result()
 	return val, err
 }
