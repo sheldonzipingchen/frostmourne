@@ -9,4 +9,5 @@ require (
 	github.com/sirupsen/logrus v1.8.0
 	github.com/spf13/viper v1.7.1
 	github.com/x-cray/logrus-prefixed-formatter v0.5.2
+	golang.org/x/text v0.3.5 // indirect
 )
