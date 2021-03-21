@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/require"
-	"frostmourne/libdata"
+	"frostmourne/lib/data"
 )
 
 func TestGNack(t *testing.T) {

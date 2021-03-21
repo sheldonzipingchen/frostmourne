@@ -4,7 +4,7 @@ import (
 	"encoding/binary"
 	"sync/atomic"
 
-	"frostmourne/libdata"
+	"frostmourne/lib/data"
 )
 
 func nextSequenceNumber(s *int32) (v int32) {

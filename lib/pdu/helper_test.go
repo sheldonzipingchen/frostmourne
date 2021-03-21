@@ -5,7 +5,7 @@ import (
 	"log"
 	"testing"
 
-	"frostmourne/libdata"
+	"frostmourne/lib/data"
 
 	"github.com/stretchr/testify/require"
 )

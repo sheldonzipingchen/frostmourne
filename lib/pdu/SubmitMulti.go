@@ -1,7 +1,7 @@
 package pdu
 
 import (
-	"frostmourne/libdata"
+	"frostmourne/lib/data"
 )
 
 // SubmitMulti PDU is used to submit an SMPP message for delivery to multiple recipients

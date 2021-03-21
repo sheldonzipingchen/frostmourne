@@ -1,7 +1,7 @@
 package pdu
 
 import (
-	"frostmourne/libdata"
+	"frostmourne/lib/data"
 )
 
 // Unbind PDU is to deregister an instance of an ESME from the SMSC and inform the SMSC

@@ -1,7 +1,7 @@
 package pdu
 
 import (
-	"frostmourne/libdata"
+	"frostmourne/lib/data"
 )
 
 // DeliverSM PDU is issued by the SMSC to send a message to an ESME.

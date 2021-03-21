@@ -1,7 +1,7 @@
 package pdu
 
 import (
-	"frostmourne/libdata"
+	"frostmourne/lib/data"
 )
 
 // ReplaceSM PDU is issued by the ESME to replace a previously submitted short message

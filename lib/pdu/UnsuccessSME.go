@@ -1,7 +1,7 @@
 package pdu
 
 import (
-	"frostmourne/libdata"
+	"frostmourne/lib/data"
 )
 
 // UnsuccessSME indicates submission was unsuccessful and the respective errors.

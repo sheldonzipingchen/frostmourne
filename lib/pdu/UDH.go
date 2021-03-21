@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"fmt"
 
-	"frostmourne/libdata"
+	"frostmourne/lib/data"
 )
 
 // For now, this package only support message uses of UDH for message concatenation

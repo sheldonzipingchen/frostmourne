@@ -3,7 +3,7 @@ package pdu
 import (
 	"fmt"
 
-	"frostmourne/libdata"
+	"frostmourne/lib/data"
 )
 
 // DestinationAddress represents Address or Distribution List based on destination flag.

@@ -1,7 +1,7 @@
 package pdu
 
 import (
-	"frostmourne/libdata"
+	"frostmourne/lib/data"
 )
 
 // GenericNack PDU is a generic negative acknowledgement to an SMPP PDU submitted

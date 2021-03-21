@@ -1,7 +1,7 @@
 package pdu
 
 import (
-	"frostmourne/libdata"
+	"frostmourne/lib/data"
 )
 
 // Outbind PDU is used by the SMSC to signal an ESME to originate a bind_receiver request to the SMSC.

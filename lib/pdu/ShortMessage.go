@@ -3,8 +3,8 @@ package pdu
 import (
 	"sync/atomic"
 
-	"frostmourne/libdata"
-	"frostmourne/liberrors"
+	"frostmourne/lib/data"
+	"frostmourne/lib/errors"
 )
 
 var (

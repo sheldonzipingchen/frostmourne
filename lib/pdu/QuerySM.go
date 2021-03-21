@@ -1,7 +1,7 @@
 package pdu
 
 import (
-	"frostmourne/libdata"
+	"frostmourne/lib/data"
 )
 
 // QuerySM PDU is issued by the ESME to query the status of a previously submitted short message.

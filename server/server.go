@@ -1,8 +1,10 @@
 package server
 
 import (
+	"bufio"
 	"fmt"
 	"frostmourne/config"
+	"frostmourne/lib/pdu"
 	"frostmourne/loglib"
 	"net"
 
@@ -62,4 +64,29 @@ func Init() {
 }
 
 func process(conn net.Conn) {
+	for {
+		reader := bufio.NewReader(conn)
+		reqPDU, err := pdu.Parse(reader)
+		if err != nil {
+			serverLog.WithFields(logrus.Fields{
+				"error": err,
+			}).Error("Parse PDU Error")
+			break
+		}
+
+		serverLog.WithFields(logrus.Fields{
+			"Request PDU": reqPDU,
+		}).Debug("User Request PDU")
+
+		switch i := reqPDU.(type) {
+		case nil:
+			fmt.Println(i)
+		case *pdu.BindRequest:
+			// todo 绑定请求
+		case *pdu.SubmitSM:
+			fmt.Println(i)
+
+		}
+	}
+
 }

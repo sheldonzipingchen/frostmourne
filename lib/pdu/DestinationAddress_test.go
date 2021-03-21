@@ -3,7 +3,7 @@ package pdu
 import (
 	"testing"
 
-	"frostmourne/libdata"
+	"frostmourne/lib/data"
 
 	"github.com/stretchr/testify/require"
 )

@@ -1,8 +1,8 @@
 package pdu
 
 import (
-	"frostmourne/libdata"
-	"frostmourne/liberrors"
+	"frostmourne/lib/data"
+	"frostmourne/lib/errors"
 )
 
 type pduGenerator func() PDU

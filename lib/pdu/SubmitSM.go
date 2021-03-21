@@ -1,7 +1,7 @@
 package pdu
 
 import (
-	"frostmourne/libdata"
+	"frostmourne/lib/data"
 )
 
 // SubmitSM PDU is used by an ESME to submit a short message to the SMSC for onward
