@@ -68,6 +68,7 @@ func process(conn net.Conn) {
 		reader := bufio.NewReader(conn)
 		reqPDU, err := pdu.Parse(reader)
 		if err != nil {
+			// 解释 pdu 出错
 			serverLog.WithFields(logrus.Fields{
 				"error": err,
 			}).Error("Parse PDU Error")
