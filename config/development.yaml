@@ -7,3 +7,9 @@ log:
 smpp:
   address: 127.0.0.1
   port: 2785
+
+amqp:
+  host: 127.0.0.1
+  port: 5672
+  username: guest
+  password: guest
