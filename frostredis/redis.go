@@ -28,29 +28,34 @@ func (rc redisClient) Get(ctx context.Context, key string) (string, error) {
 	return val, err
 }
 
-func NewRedisClient() RedisClient {
+var rc RedisClient
+
+func Init() {
 	config := config.GetConfig()
 
 	redisHost := config.GetString("redis.host")
 	if redisHost == "" {
 		redisHost = "127.0.0.1"
 	}
+
 	redisPort := config.GetString("redis.port")
 	if redisPort == "" {
 		redisPort = "6379"
 	}
+
 	redisAddr := fmt.Sprintf("%s:%s", redisHost, redisPort)
 	redisPassword := config.GetString("redis.password")
 	redisDB := config.GetInt("redis.db")
 	rdb := redis.NewClient(&redis.Options{
-		Addr:     redisAddr,
+		Addr: redisAddr,
 		Password: redisPassword,
-		DB:       redisDB,
+		DB: redisDB,
 	})
-
-	rc := redisClient{
+	rc = redisClient{
 		Rdb: rdb,
 	}
+}
 
+func NewRedisClient() RedisClient {
 	return rc
 }

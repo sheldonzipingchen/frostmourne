@@ -9,6 +9,7 @@ import (
 
 func init() {
 	config.Init("test")
+	Init()
 }
 
 func TestNewRedisClient(t *testing.T) {
