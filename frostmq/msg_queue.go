@@ -12,10 +12,7 @@ type FrostMQClient interface {
 }
 
 type frostMQClient struct {
-	Username string
-	Password string
-	Addr     string
-	Port     string
+	Conn *amqp.Connection
 }
 
 var conn *amqp.Connection
@@ -51,6 +48,8 @@ func Init() {
 	}
 }
 
-func NewFrostMQClient() FrostMQClient {
-	return &frostMQClient{}
+func GetFrostMQClient() FrostMQClient {
+	return &frostMQClient{
+		Conn: conn,
+	}
 }
