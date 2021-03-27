@@ -3,6 +3,7 @@ module frostmourne
 go 1.15
 
 require (
+	entgo.io/ent v0.7.0
 	github.com/go-redis/redis/v8 v8.6.0
 	github.com/mgutz/ansi v0.0.0-20200706080929-d51e80ef957d // indirect
 	github.com/rifflock/lfshook v0.0.0-20180920164130-b9218ef580f5
