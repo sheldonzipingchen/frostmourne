@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"frostmourne/config"
+	"frostmourne/db"
 	"frostmourne/frostredis"
 	"frostmourne/loglib"
 	"frostmourne/server"
@@ -18,5 +19,6 @@ func main() {
 	config.Init(*environment)
 	loglib.Init()
 	frostredis.Init()
+	db.Init()
 	server.Init()
 }
