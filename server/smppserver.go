@@ -16,12 +16,12 @@ var serverLog = loglib.GetLog()
 func Init() {
 	config := config.GetConfig()
 
-	address := config.GetString("server.address")
+	address := config.GetString("smpp.address")
 	if address == "" {
 		address = "127.0.0.1"
 	}
 
-	port := config.GetString("server.port")
+	port := config.GetString("smpp.port")
 	if port == "" {
 		port = "2775"
 	}
@@ -79,14 +79,29 @@ func process(conn net.Conn) {
 			"Request PDU": reqPDU,
 		}).Debug("User Request PDU")
 
-		switch i := reqPDU.(type) {
-		case nil:
-			fmt.Println(i)
+		switch reqPDU.(type) {
 		case *pdu.BindRequest:
 			// todo 绑定请求
+			fmt.Println("hello world")
+		case *pdu.CancelSM:
+			// todo 取消提交请求
+			fmt.Println("hello world")
 		case *pdu.SubmitSM:
-			fmt.Println(i)
-
+			// todo 提交请求
+			fmt.Println("hello world")
+		case *pdu.DataSM:
+			// todo 前期不支持
+			fmt.Println("hello world")
+		case *pdu.DeliverSM:
+			fmt.Println("hello world")
+		case *pdu.EnquireLink:
+			fmt.Println("hello world")
+		case *pdu.QuerySM:
+			fmt.Println("hello world")
+		case *pdu.ReplaceSM:
+			fmt.Println("hello world")
+		case *pdu.SubmitMulti:
+			fmt.Println("hello world")
 		}
 	}
 

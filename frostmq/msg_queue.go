@@ -4,11 +4,12 @@ import (
 	"fmt"
 	"frostmourne/config"
 	"frostmourne/loglib"
+
 	"github.com/sirupsen/logrus"
 	"github.com/streadway/amqp"
 )
 
-type FrostMQClient interface {
+type MessageMQClient interface {
 }
 
 type frostMQClient struct {
@@ -48,7 +49,7 @@ func Init() {
 	}
 }
 
-func GetFrostMQClient() FrostMQClient {
+func GetFrostMQClient() MessageMQClient {
 	return &frostMQClient{
 		Conn: conn,
 	}

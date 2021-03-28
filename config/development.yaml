@@ -16,6 +16,9 @@ smpp:
   address: 127.0.0.1
   port: 2785
 
+web:
+  port: 9999
+
 amqp:
   host: 127.0.0.1
   port: 5672
